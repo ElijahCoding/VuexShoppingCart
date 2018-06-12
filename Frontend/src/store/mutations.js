@@ -34,3 +34,7 @@ export const removeFromCart = (state, productId) => {
     })
   }
 }
+
+export const clearCart = (state) => {
+  state.cart = []
+}

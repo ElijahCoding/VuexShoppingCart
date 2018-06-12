@@ -27,6 +27,11 @@ export const removeProductFromCart = ({ commit }, productId) => {
   commit('removeFromCart', productId)
   return axios.delete(`http://127.0.0.1:8000/api/cart/${productId}`)
 }
+
+export const removeAllProductsFromCart = ({ commit }) => {
+  commit('clearCart')
+  return axios.delete('http://127.0.0.1:8000/api/cart')
+}
 // get cart
 // add a product to cart
 // remove a product from cart
