@@ -5,6 +5,13 @@ export const products = (state) => {
 export const cart = (state) => {
   return state.cart
 }
-// cart
-// cart item count
-// cart total
+
+export const cartItemCount = (state) => {
+  return state.cart.length
+}
+
+export const cartTotal = (state) => {
+  return state.cart.reduce((a, b) => {
+    return a + b.product.price * b.quantity
+  }, 0).toFixed(2)
+}
