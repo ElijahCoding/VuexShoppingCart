@@ -8,7 +8,6 @@
 
 <script>
   import { mapActions, mapGetters } from 'vuex'
-
   import Product from './Product'
 
   export default {
@@ -16,16 +15,14 @@
     components: {
       Product
     },
-
     computed: {
       ...mapGetters({
-        products: 'products'
+        products: 'shopping/products'
       })
     },
-
     methods: {
       ...mapActions({
-        getProducts: 'getProducts'
+        getProducts: 'shopping/getProducts'
       })
     },
     mounted () {

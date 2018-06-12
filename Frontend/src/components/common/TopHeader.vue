@@ -2,18 +2,24 @@
   <header class="header">
     <div class="container">
       {{ cartItemCount }} items in cart (£{{ cartTotal }})
+
+      <div class="pull-right" v-if="user.authenticated">
+        {{ user.data.name }}
+      </div>
     </div>
   </header>
 </template>
 
 <script>
   import { mapGetters } from 'vuex'
+
   export default {
     name: 'top-header',
     computed: {
       ...mapGetters({
-        cartItemCount: 'cartItemCount',
-        cartTotal: 'cartTotal'
+        cartItemCount: 'shopping/cartItemCount',
+        cartTotal: 'shopping/cartTotal',
+        user: 'auth/user'
       })
     }
   }

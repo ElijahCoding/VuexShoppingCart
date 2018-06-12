@@ -1,4 +1,3 @@
 export default {
-  products: [],
-  cart: []
+  message: null
 }

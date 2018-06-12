@@ -11,16 +11,13 @@
 
 <script>
   import { mapActions } from 'vuex'
-  export default {
-    props: [
-      'product'
-    ],
 
+  export default {
+    props: ['product'],
     methods: {
       ...mapActions({
-        addProductToCart: 'addProductToCart'
+        addProductToCart: 'shopping/addProductToCart'
       }),
-
       addToCart () {
         this.addProductToCart({
           product: this.product,
