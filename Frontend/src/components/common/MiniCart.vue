@@ -14,7 +14,7 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+  import { mapGetters, mapActions } from 'vuex'
 
   export default {
     name: 'mini-cart',
@@ -22,6 +22,15 @@
       ...mapGetters({
         cart: 'cart'
       })
+    },
+    methods: {
+      ...mapActions({
+        getCart: 'getCart'
+      })
+    },
+
+    mounted () {
+      this.getCart()
     }
   }
 </script>

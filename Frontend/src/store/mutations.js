@@ -2,6 +2,10 @@ export const setProducts = (state, products) => {
   state.products = products
 }
 
+export const setCart = (state, items) => {
+  state.cart = items
+}
+
 export const appendToCart = (state, { product, quantity }) => {
   const existing = state.cart.find((item) => {
     return item.product.id === product.id
